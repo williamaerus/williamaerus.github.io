@@ -179,48 +179,13 @@
         </div>
         <div class="row my-2">
             <div class="col-md-4 mx-auto text-muted text-center small-xl">
-                &copy; 2023 copyright free <br>
-                <!-- Login Button -->
-<button id="login-btn">Log In</button>
-
-<!-- Login Overlay -->
-<div id="login-overlay">
-  <form>
-    <h2>Login</h2>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
-    <button type="submit" onclick="logged()">Log In</button>
-  </form>
-  <button id="close-btn">X</button>
+                &copy; 2023 copyright free 
 </div>
 
             </div>
         </div>
     </div>
 </footer>
-<script>
-    // Get the login button and the login overlay
-    const loginBtn = document.getElementById('login-btn');
-    const loginOverlay = document.getElementById('login-overlay');
-  
-    // Add an event listener to the login button that toggles the display of the login overlay
-    loginBtn.addEventListener('click', function() {
-      loginOverlay.style.display = 'block';
-    });
-  
-    // Get the close button for the login overlay
-    const closeBtn = document.getElementById('close-btn');
-  
-    // Add an event listener to the close button that hides the login overlay
-    closeBtn.addEventListener('click', function() {
-      loginOverlay.style.display = 'none';
-    });
-    function logged(){
-      alert("this function is still being developed, please be patient, in the meanwhile, why don't you look at my github profile?")
-    }
-  </script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
