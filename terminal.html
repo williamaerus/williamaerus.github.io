@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delayed Text</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: monospace;
+        font-size: 2rem;
+        padding: 2rem;
+      }
+      .cursor {
+        display: inline-block;
+        width: 0.5rem;
+        height: 1.5rem;
+        margin-left: 0.2rem;
+        background-color: #fff;
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <span id="output"></span><span class="cursor"></span>
+
+    <script>
+      const text = "welcome user, this is my website.\ni'd be really happy if you left a follow on my github.\n\nhttps://github.com/williamaerus/";
+      const delay = 100; // in milliseconds
+      let lines = text.split("\n");
+      let lineIndex = 0;
+      let charIndex = 0;
+
+      function typeWriter() {
+        if (lineIndex < lines.length) {
+          let line = lines[lineIndex];
+          if (charIndex < line.length) {
+            document.getElementById("output").innerHTML += line.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriter, delay);
+          } else {
+            document.getElementById("output").innerHTML += "<br>";
+            lineIndex++;
+            charIndex = 0;
+            setTimeout(typeWriter, delay * 2); // add extra delay between lines
+          }
+        } else {
+          document.querySelector(".cursor").style.display = "none";
+        }
+      }
+
+      typeWriter();
+    </script>
+  </body>
+</html>
